@@ -27,7 +27,7 @@ public class ListUsersController {
 		
 		try { // write user to database
 			  myConn = DriverManager.getConnection(dbUrl, user, password);
-			  String sql = "SELECT * FROM users;";
+			  String sql = "SELECT user_name FROM users;";
 			  myPrepStmt = myConn.prepareStatement(sql);
 			  //above this is boilerplate text that is repeated every time I work with JDBC.
 			  //myPrepStmt.setInt(1, id); this is here just as an example.
