@@ -13,7 +13,7 @@
 	Please log in.<br/>
 	<h:panelGrid columns="2">
 		User name: <h:inputText value="#{loginController.name}"/>
-		Password: <h:inputText value="#{loginController.password}"/>
+		Password: <h:inputSecret value="#{loginController.password}"/>
 	</h:panelGrid>
 		<h:commandButton value="Login" action="#{loginController.login}"/>
 </h:form>
