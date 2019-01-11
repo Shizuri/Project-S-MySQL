@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+<title>Create user page</title>
+<link href="./css/styles.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body>
+<h1 class="title">Create user page</h1>
+
+<h:form>
+	<h:panelGrid columns="3" styleClass="formTable">
+		User name:
+		<h:inputText value="#{registerController.userName}"
+					 id="uname"
+					 required="true"
+					 requiredMessage="Please enter your User Name">
+		</h:inputText>
+		<h:message for="uname"/>
+		
+		Password:
+		<h:inputText value="#{registerController.password}"
+					 id="pass"
+					 required="true"
+					 requiredMessage="Please enter your Password">
+		</h:inputText>
+		<h:message for="pass"/>
+		
+		Hint:
+		<h:inputText value="#{registerController.hint}"
+					 id="hint"
+					 required="true"
+					 requiredMessage="Please enter a hint">
+		</h:inputText>
+		<h:message for="hint"/>
+	</h:panelGrid>
+	<h:commandButton value="Register" action="#{registerController.register}"/>
+	<hr/>
+	<a href="index.jsf">Back to login page</a>
+</h:form>
+
+</h:body></html>
