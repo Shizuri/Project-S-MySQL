@@ -17,6 +17,13 @@ public class ListUsersController {
 		
 		List<String> theList = new ArrayList<String>();
 		
+		try { //this is needed if the JDBC driver (mysql-connector-java-8.0.13.jar) is in the WebContent/WEB-INF/lib folder and not in the Tomcat/lib folder. 
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} //this is needed if the JDBC driver (mysql-connector-java-8.0.13.jar) is in the WebContent/WEB-INF/lib folder and not in the Tomcat/lib folder. 
+		
 		Connection myConn = null;
 		PreparedStatement myPrepStmt = null; //<-- PreparedStatement, NOT Statement
 		ResultSet myRs = null;
